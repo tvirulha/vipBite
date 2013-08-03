@@ -1,14 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>VipBite</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+	<title>VIPBITE | <%= siteTitle %></title>
+
+	<!-- Section used for protection-->
+	<%= csrf_meta_tags %>
+
+	<!-- INCLUDING STYLESHEET -->
+	<%= stylesheet_link_tag 'application', :media => 'all'%>
+
+	<!-- INCLUDING JAVASCRIPT -->
+	<%= javascript_include_tag 'application' %>
+
 </head>
+
 <body>
+	<div id="vipBite_Header" class="header-content-container" style="position: relative; margin-top: 10px">
+		<div id="vipBite_LogoSection" style="float: left; display: inline-block; background-color: white; min-width:400px; height: 100%; margin-left:10px;">
+			This is Where the Image LOGO will be
+		</div>
+		<div id="vipBite_NavigationMenu" style="display: inline-block; height:20px;text-align: center; position: absolute;bottom: 10px; margin-left: 10px">
+			<nav class="nav-menu">
+				<div class="nav-item">
+					<a href="#"><text>Search Restaurant</text></a>
+				</div>
+				<div class="nav-item">
+					<a href="#"><text>How it Work</text></a>
+				</div>
+				<div class="nav-item">
+					<a href="#"><text>Become A Member</text></a>
+				</div>
+			</nav>
+		</div>
 
-<%= yield %>
+		<!-- This value of the button should be auto ste by the application -->
+		<input type="button" id="UserMenuButton" value="UserMenu" name="TESTING" style="display: inline-block; background-color: yellowgreen; height:20px; text-align: center; position: absolute; top: 10px; right: 10px; margin-left: 10px"/>
+	</div>
 
+	<!-- this is where the actual content will be loaded -->
+	<%= yield %>
+	<!-- end of the container -->
+
+	<div id="vipBite_Footer" class="footer-content-container" style="position: relative">
+		<div id="vipBite_FooterContent" style="margin-top: 10px">
+			<section id="ContactUs_Section" style="display: block; float:left; margin-left: 20px; margin-right:20px; width: 296px; background-color: antiquewhite;">
+				<h3>CONTACT US</h3>
+				<text>
+					YOUR ADDRESS COLIN!
+				</text>
+			</section>
+			<section id="SocialMedia_Section" style="display: block; float:left; margin-left: 20px; margin-right:20px; width: 296px; background-color: antiquewhite;">
+				<h3>FOLLOW US ON</h3>
+				<ul>
+					<li>Tweeter</li>
+					<li>Facebook</li>
+				</ul>
+			</section>
+			<section id="Policies_Section" style="display: block; float:left; margin-left: 20px; margin-right:20px; width: 296px; background-color: antiquewhite;">
+				<h3>TERMS & CONDITION</h3>
+				<text>
+					this here will be a link to various ploicies page.
+				</text>
+			</section>
+
+			<div id="vipBite_CopyRight" style="position: absolute; left: 20px; bottom: 5px; margin-right:20px; font-family: cursive">
+				<b>© 2014 vipBite.com . All rights reserved</b>
+			</div>
+			<div id="vipBite_Credited" style="position: absolute; right: 20px; bottom: 5px; margin-right:20px; font-family: cursive">
+				<b>© Design & Create By: Tamanon Virulhakieat</b>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
