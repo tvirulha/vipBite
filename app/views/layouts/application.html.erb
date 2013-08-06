@@ -10,6 +10,7 @@
 	<%= stylesheet_link_tag 'application', :media => 'all'%>
 
 	<!-- INCLUDING JAVASCRIPT -->
+	<%= javascript_include_tag 'jquery' %>
 	<%= javascript_include_tag 'application' %>
 
 </head>
@@ -33,8 +34,24 @@
 			</nav>
 		</div>
 
-		<!-- This value of the button should be auto ste by the application -->
-		<input type="button" id="UserMenuButton" value="UserMenu" name="TESTING" style="display: inline-block; background-color: yellowgreen; height:20px; text-align: center; position: absolute; top: 10px; right: 10px; margin-left: 10px"/>
+		<!-- THE HEADER WILL CHANGE DEPENDING ON WETHER OR NOT THE USER IS LOGIN FOR NOW ASSUMED HE IS NOT -->
+		<table class="login-containter" style="position: absolute; right: 10px; top: 5px;">
+			<tbody>
+				<tr>
+					<td><label style="margin-left: 10px;">Email:</label></td>
+					<td><label style="margin-left: 10px;">Password:</label></td>
+				</tr>
+				<tr>
+					<td><input type="text" id="account_UserName" name="Email" style="margin-left: 10px;"/></td>
+					<td><input type="password" id="account_PassId" name="Password" style="margin-left: 10px;"/></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><a href="#" style="margin-left: 10px; margin-bottom: 5px;">forgot your password?</a></td>
+					<td><input type="button" id="account_LoginButton" value="Log In" style="margin-left: 10px; margin-bottom: 5px; margin-top:5px"/></td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 
 	<!-- this is where the actual content will be loaded -->

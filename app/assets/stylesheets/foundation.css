@@ -13,7 +13,7 @@ body {
 /*-- CONTAINER CLASS CSS--*/
 .header-content-container {
 	display: block;
-	height: 100px;
+	height: 120px;
 	max-width:1010px;
 	background-color: floralwhite;
 	margin: 0 auto;
@@ -29,7 +29,7 @@ body {
 	margin: 0 auto;
 	background-color: floralwhite;
 	overflow: hidden;
-	min-height: 700px;
+	min-height: 680px;
 	border: 2px black solid;
 	box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }

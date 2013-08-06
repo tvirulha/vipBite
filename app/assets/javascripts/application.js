@@ -11,3 +11,10 @@
 // about supported directives.
 //
 //= require_tree .
+
+$(document).ready( function() {
+    $("#UserMenuButton").click( function (){
+        window.location.href = "/login";
+        return;
+    })
+})
