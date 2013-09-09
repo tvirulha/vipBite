@@ -1,7 +1,7 @@
 /*-- BASE CSS --*/
 html {
 	display:block;
-	background-color: black;
+	background-color: white;
 	font-size: 12px;
 	font-family: helvetica;
 }
@@ -15,11 +15,11 @@ body {
 	display: block;
 	height: 120px;
 	max-width:1010px;
-	background-color: floralwhite;
+	background-color: white;
 	margin: 0 auto;
 	position: relative;
 	overflow: hidden;
-	border: 2px black solid;
+	border: 0px black solid;
 	box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
@@ -30,19 +30,17 @@ body {
 	background-color: floralwhite;
 	overflow: hidden;
 	min-height: 680px;
-	border: 2px black solid;
 	box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 .footer-content-container {
 	display: block;
-	height: 150px;
+	height: 160px;
 	max-width:1010px;
 	margin: 0 auto;
-	background-color: floralwhite;
+	background-color: white;
 	position: relative;
 	overflow: hidden;
-	border: 2px black solid;
 	box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
@@ -127,4 +125,29 @@ p {
 .nav-item a:hover text {
 	background-color: blanchedalmond;
 	padding: 5px;
+}
+blockquote{
+	font-family: Georgia, serif;
+	font-size: 14px;
+	font-style: italic;
+	position: relative;
+}
+
+blockquote:before{
+	font-family: helvetica;
+	content: "\201C";
+	font-size: 40px;
+	line-height: 0.75;
+}
+
+blockquote cite {
+	color: #999999;
+	font-size: 14px;
+	display: block;
+	margin-top: 5px;
+}
+
+blockquote cite:before {
+	/*\2014 \2009 \2009 => --  */
+	content: "\2014 \2009 \2009";
 }

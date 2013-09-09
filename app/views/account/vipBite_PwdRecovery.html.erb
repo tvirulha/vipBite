@@ -1,0 +1,14 @@
+<div id="vipBite_Body" class="body-content-container">
+	<%= form_tag(controller: 'account', action: 'vipBite_PwdRecovery', method: "post", style: "position: relative;") do %>
+		<div id="forgetpwdform" style="width:600px; text-align:left; margin: 0 auto; margin-top: 100px; position: relative;">
+			<h1>Forgot your password?</h1>
+			<div id="input-container" style="border-top: solid 2px #000000; border-bottom: solid 2px #000000; margin-top : 10px; margin-bottom: 10px; position: relative;">
+				<div id="userinputcontainer" style="margin-top:10px; margin-bottom:10px; text-align:center;">
+					<img src="/Image/Shared/email.png" alt="Email" width="32" height="32" align="middle"></img>
+					<%= email_field_tag 'email', nil, :maxlength=> 40, :size => 40 %>
+				</div>
+			</div>
+			<%= submit_tag('Recover', style:"margin-bottom: 5px; margin-top:5px; margin-right:10px;  padding: 4px; float:right")%>
+		</div>
+	<%end%>
+</div>

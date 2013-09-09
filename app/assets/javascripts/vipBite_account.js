@@ -12,4 +12,11 @@ $(document).ready( function() {
         window.location.href = "/register";
         return;
     })
+
+    //set up the log in button action.
+    $("#account_LoginButton").click( function (){
+        $.ajax({type: 'POST', url: '/Login',
+            success: function(data)
+            {alert("FUCK OFF");}});
+    });
 })

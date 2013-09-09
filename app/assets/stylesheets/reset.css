@@ -18,3 +18,5 @@ q:before, q:after { content:''}
 strong { font-weight:bold; }
 em { font-style:italic; }
 a img { border:none; } /* Gets rid of IE's blue borders */
+
+blockquote { text-indent: 0}
