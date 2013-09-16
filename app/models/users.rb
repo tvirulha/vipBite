@@ -46,15 +46,15 @@ class Users < ActiveRecord::Base
 		end
 	end
 
-	def self.makePurchase(firstName, lastName, cardno, cardtype, expiration, cvv, price, ipaddress, address, city, province, postal)
+	def self.makePurchase(firstName, lastName, cardno, cardtype, exp_month, exp_year, cvv, price, ipaddress, address, city, province, postal)
 
 		creditCrad = ActiveMerchant::Billing::CreditCard.new(
-			:type => cardtype,
+			:brand => cardtype,
 			:number => cardno,
 			:first_name => firstName,
 			:last_name => lastName,
-			:month => 12,
-			:year => 2025,
+			:month => exp_month,
+			:year => exp_year,
 			:verification_value => cvv
 			)
 
@@ -78,5 +78,22 @@ class Users < ActiveRecord::Base
 			:country => "CA",
 			:zip => postal
 		}
+	end
+
+	def self.update_userExpirationDate(email, extentiontype)
+		user = find_by_user_email(email);
+
+		if(extentiontype.to_s == "6months")
+			renew = 180.days.from_now;
+			user.update(userExpirationDate: renew.to_s);
+		elsif(extentiontype.to_s == "12months")
+			renew = 365.days.from_now;
+			user.update(userExpirationDate: renew.to_s);
+		end
+	end
+
+	def self.deleteIncompleteUserRegistration(email)
+		user = find_by_user_email(email);
+		user.destroy;
 	end
 end

@@ -28,26 +28,28 @@ class AccountController < ApplicationController
 
 				if(Users.addNewClient(params[:firstName], params[:lastName], params[:email], params[:password], params[:cfm_password]))
 					if((!params[:noc_lastname].empty?) && (!params[:noc_firstname].empty?) && (!params[:cardno].empty?) \
-						&& (!params[:exp].empty?) && (!params[:cvv].empty?) && (!params[:address].empty?) && (!params[:city].empty?) \
-						&& (!params[:prov].empty?) && (!params[:postal].empty?))
+						&& (!params[:exp_month].empty?) && (!params[:exp_month].empty?) && (!params[:cvv].empty?) \
+						&& (!params[:address].empty?) && (!params[:city].empty?) && (!params[:prov].empty?) && (!params[:postal].empty?))
 
 						succed = Users.makePurchase(params[:noc_firstname], params[:noc_lastname], params[:cardno], params[:cardtype], \
-							params[:exp], params[:cvv], 90, request.remote_ip, params[:address], params[:city], \
+							params[:exp_month], params[:exp_year], params[:cvv], 90, request.remote_ip, params[:address], params[:city], \
 							params[:prov], params[:postal]);
 
 						if (succed != nil && succed[:complete] == true)
-							flash[:warning] = "TEST COMPLETE";
+							Users.update_userExpirationDate(params[:email], params[:membertype]);
+							redirect_to(root_url);
 						elsif succed.nil?
-							flash[:warning] = "FAILURE TO VALIDATE CREDIT CARD!";
+							flash[:warning] = "FAILURE TO VALIDATE YOUR CREDIT CARD! PLEASE TRY AGAIN";
+							Users.deleteIncompleteUserRegistration(params[:email]);
 						else
 							flash[:warning] = succed[:message];
 						end
-
-						return;
 					else
+						Users.deleteIncompleteUserRegistration(params[:email]);
 						redirect_to(root_url);
 					end
 				else
+					Users.deleteIncompleteUserRegistration(params[:email]);
 					redirect_to("/register");
 				end
 			else

@@ -1,7 +1,8 @@
 <div id="vipBite_Body" class="body-content-container">
 	<div id="body_RegisterContent" class="container" style="margin-top:20px">
 		<% if(flash[:warning])%>
-			<div style="background-color: red">
+			<div style="background-color: red; padding: 5px; border solid 2px #6E0705;">
+				<p>Error on processing the registration request to VIPbite<p>
 				<%= flash[:warning] %>
 			</div>
 		<%end%>
@@ -31,15 +32,16 @@
 					<label class="margin-left-5px margin-right-25px">12 months -$124.95</label>
 					<hr class="space"/>
 					<label class="margin-left-10px">NAME ON CARD:</label>
-					<%= text_field_tag('noc_firstname', params[:noc_firstname] || nil, maxlength: 30, :class=>"registerinput") %>
-					<%= text_field_tag('noc_lastname', params[:noc_lastname] || nil, maxlength: 30, :class=>"registerinput") %>
+					<%= text_field_tag('noc_firstname', params[:noc_firstname] || nil, placeholder: "Firstname", maxlength: 30, :class=>"registerinput") %>
+					<%= text_field_tag('noc_lastname', params[:noc_lastname] || nil, placeholder: "Lastname", maxlength: 30, :class=>"registerinput") %>
 					<label class="margin-left-10px">CARD TYPE:</label>
 					<%= select_tag('cardtype', options_for_select(["VISA", "MASTERCARD", "AMERICANEXP"]), :class=>"registerinput") %>
 					<hr class="space"/>
 					<label class="margin-left-10px">CARD NUMBER:</label>
 					<%= text_field_tag('cardno', nil, maxlength: 20, :class=>"registerinput")%>
 					<label class="margin-left-10px">EXP:</label>
-					<%= text_field_tag('exp', nil, maxlength: 5, placeholder: "MM/YY", :class=>"registerinput")%>
+					<%= text_field_tag('exp_month', nil, maxlength: 2, placeholder: "MM", :class=>"registerinput", :size=> 2)%>
+					<%= text_field_tag('exp_year', nil, maxlength: 4, placeholder: "YYYY", :class=>"registerinput", :size=> 4)%>
 					<label class="margin-left-10px">CVV/CID NUMBER:</label>
 					<%= password_field_tag('cvv', nil, maxlength: 3, :class=>"registerinput")%>
 					<hr class="space"/>
