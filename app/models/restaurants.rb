@@ -8,7 +8,7 @@ class Restaurants < ActiveRecord::Base
 	has_many :cuisines, :foreign_key => :cuisine_id
 	attr_accessible :restaurantName, :address, :city, :province, :postal, :imageUrl, :cusine_id, :restaurantifos_id
 
-	def self.AddNewRestaurant(restaurantName, Address, City, Prov, Postal, Image, Cuisine, email, phone, promotion)
+	def self.AddNewRestaurant(restaurantName, address, city, prov, postal, image, cuisine, email, phone, promotion)
 		isExist = Restaurants.find_by_restaurantName(restaurantName);
 
 		if(isExist)
@@ -19,16 +19,16 @@ class Restaurants < ActiveRecord::Base
 				uuidexist = Restinformations.find_by_restaurantinfo_id(uuid);
 			end while(uuidexist)
 
-			latlong = ConvertedAddressToLatLong(Address, City, Prov, Postal);
+			latlong = ConvertedAddressToLatLong(address, city, prov, postal);
 
-			cId = Cuisines.find_by_cuisineName(Cuisine);
+			cId = Cuisines.find_by_cuisineName(cuisine);
 			rinfo = Restinformations.create(:restaurantinfo_id => uuid, :restaurnatEmail => email, :restaurantPromotion => promotion, :restaurantPhoneNo => phone);
 			newrestaurant = Restaurants.create( :resaturantName => restaurantName, 
-												:address => Address, 
-												:city => City, 
-												:province => Prov, 
-												:postal => Postal, 
-												:imageUrl => Image, 
+												:address => address, 
+												:city => city, 
+												:province => prov, 
+												:postal => postal, 
+												:imageUrl => image, 
 												:latitude => latlong[0],
 												:longtitude => latlong[1],
 												:cuisine_id => cId, 
@@ -37,21 +37,21 @@ class Restaurants < ActiveRecord::Base
 		end
 	end
 
-	def self.UpdateExistingRestaurant(restaurantName, Address, City, Prov, Postal, Image, Email, Phone, Promotion)
+	def self.UpdateExistingRestaurant(restaurantName, address, city, prov, postal, image, email, phone, promotion)
 		foundRestaurant = Restaurants.find_by_restaurantName(restaurantName);
 
 		if(foundRestaurant)
-			foundRestaurant.address = Address;
-			foundRestaurant.city = City;
-			foundRestaurant.province = Prov;
-			foundRestaurant.postal = Postal;
-			foundRestaurant.imageUrl = Image;
+			foundRestaurant.address = address;
+			foundRestaurant.city = city;
+			foundRestaurant.province = prov;
+			foundRestaurant.postal = postal;
+			foundRestaurant.imageUrl = image;
 			foundRestaurant.save;
 
 			restInfo = Restinformations.find_by_restaurantinfo_id(foundRestaurant.restinformations_id);
-			restInfo.restaurantEmail = Email;
-			restInfo.restaurantPromotion = Promotion;
-			restInfo.restaurantPhoneNo = Phone;
+			restInfo.restaurantEmail = email;
+			restInfo.restaurantPromotion = promotion;
+			restInfo.restaurantPhoneNo = phone;
 			restInfo.save;
 
 			return true;
@@ -60,15 +60,14 @@ class Restaurants < ActiveRecord::Base
 		end
 	end
 
-	def self.ImageUrl=(Image)
+	def self.ImageUrl=(image)
 	end
 
 	def ConvertedAddressToLatLong(address, city, prov, postal)
-		{
-			searchAddress = [address, city, prov, postal].join(",")
+		searchAddress = [address, city, prov, postal].join(",")
 
-			latlong = Geocoder.search(searchAddress)
+		latlong = Geocoder.search(searchAddress);
 
-			return [latlong[0].latitude, latlong[0].longtitude];
-		}
+		return [latlong[0].latitude, latlong[0].longtitude];
+	end
 end

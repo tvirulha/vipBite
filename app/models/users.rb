@@ -1,6 +1,5 @@
 class Users < ActiveRecord::Base
 	require 'bcrypt';
-	require 'Date';
 	require 'securerandom';
 	require 'active_merchant';
 
@@ -38,7 +37,7 @@ class Users < ActiveRecord::Base
 	             :user_email => email,
 	             :user_type => 'Client',
 	             :user_password => encryptpwd,
-	             :userExpirationDate => Date.today.to_s);
+	             :userExpirationDate =>  Time.now.to_date.to_s);
 
 			return true;
 		else
