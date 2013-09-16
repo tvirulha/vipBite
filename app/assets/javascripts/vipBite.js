@@ -1,5 +1,10 @@
 
 $(document).ready( function() {
+	 $("#becomeVIPbiteMemberButton").click( function (){
+        window.location.href = "/register";
+        return;
+    })
+
     function initialize()
     {
         var mapProp = {

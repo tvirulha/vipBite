@@ -1,8 +1,8 @@
 /*-- BASE CSS --*/
 html {
 	display:block;
-	background-color: white;
-	font-size: 12px;
+	background-color: #232423;
+	font-size: 11px;
 	font-family: helvetica;
 }
 
@@ -14,34 +14,32 @@ body {
 .header-content-container {
 	display: block;
 	height: 120px;
-	max-width:1010px;
-	background-color: white;
+	max-width: 970px;
+	background-color: #595154;
 	margin: 0 auto;
 	position: relative;
 	overflow: hidden;
-	border: 0px black solid;
-	box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+	box-shadow: 0 0 20px #000000;
 }
 
 .body-content-container {
 	position: relative;
-	max-width: 1010px;
+	max-width: 970px;
 	margin: 0 auto;
-	background-color: floralwhite;
+	background-color: #9E9598;
 	overflow: hidden;
 	min-height: 680px;
-	box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 .footer-content-container {
 	display: block;
-	height: 160px;
-	max-width:1010px;
+	min-height: 140px;
+	max-height: 170px;
+	max-width: 970px;
 	margin: 0 auto;
-	background-color: white;
+	background-color: #D6D0D2;
 	position: relative;
 	overflow: hidden;
-	box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 /*-- MARGIN CLASS CSS --*/
@@ -49,41 +47,32 @@ body {
 	margin-left: 5px;
 }
 
+.margin-left-10px {
+	margin-left: 10px;
+}
+
 .margin-right-5px {
 	margin-right: 5px;
+}
+
+.margin-right-25px {
+	margin-right: 25px;
 }
 
 .margin-top-5px {
 	margin-top: 5px;
 }
 
+.margin-top-10px {
+	margin-top: 10px;
+}
+
+.margin-top-20px {
+	margin-top: 20px;
+}
+
 .margin-bottom-5px {
 	margin-bottom: 5px;
-}
-
-.margin-left-15pct {
-	margin-left: 5%
-}
-
-/*-- LINK CSS --*/
-a {
-	color: darkslateblue;
-	font-weight: bold;
-	outline: none;
-	text-decoration:none;
-}
-
-a:hover {
-	color: darkblue;
-	font-weight: bolder;
-	outline: none;
-	text-decoration:none;
-}
-
-a:focus {
-	color: blueviolet;
-	outline: none;
-	text-decoration:none;
 }
 
 /*-- FONT CSS --*/
@@ -103,8 +92,18 @@ h3 {
 }
 
 p {
-	text-indent:30px;
-	text-transform: capitalize;
+	font-size: 10px;
+}
+
+a {
+	color: #D7DBD7;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #515C9E;
+	font-weight: bolder;
+	text-decoration: underline;
 }
 
 /*-- ETC --*/
@@ -115,17 +114,75 @@ p {
 	margin-right: 15px;
 	position: relative;
 	text-align: center;
-	padding: 2px;
+	font-size: 10px;
+	padding: 5px;
 }
 
 .nav-item a {
-	color: black; !important
+	color: #D7DBD7;
+	padding: 5px;
+	text-decoration: none;
 }
 
 .nav-item a:hover text {
-	background-color: blanchedalmond;
+	color: black;
+	font-weight: bold;
+	background-color: white;
 	padding: 5px;
 }
+
+.headerlink {
+	color: #BBBDBB; 
+	font-size: 10px;
+	margin-left: 5;
+	margin-right: 5px;
+	margin-top : 20px;
+}
+
+.userinput {
+	margin-left:5px;
+	background-color: #878282;
+	border: solid 1px black;
+}
+
+.registerinput {
+	color: #F0F1F5;
+	margin-left:5px;
+	background-color: #878282;
+	border: solid 0px black;
+}
+
+.userLoginButton {
+	margin-left:5px;
+	border: solid 1px white;
+	background-color: #878282;
+	font-size: 10px;
+	font-weight: bolder;
+	padding: 2px;
+}
+
+.FH{
+	color: black;
+	font-size: 12px;
+	font-weight: bolder;
+}
+
+.footer-content-container a {
+	color:black;
+	font-size: 10px;
+	text-decoration: none;
+}
+
+.footer-content-container a:hover {
+	color:black;
+	font-size: 10px;
+	font-weight: bolder;
+}
+
+.clickable:hover{
+	cursor: pointer
+}
+
 blockquote{
 	font-family: Georgia, serif;
 	font-size: 14px;
@@ -134,6 +191,7 @@ blockquote{
 }
 
 blockquote:before{
+	color: white;
 	font-family: helvetica;
 	content: "\201C";
 	font-size: 40px;
@@ -141,13 +199,14 @@ blockquote:before{
 }
 
 blockquote cite {
-	color: #999999;
+	color: white;
 	font-size: 14px;
 	display: block;
 	margin-top: 5px;
 }
 
 blockquote cite:before {
+	color: white;
 	/*\2014 \2009 \2009 => --  */
 	content: "\2014 \2009 \2009";
 }

@@ -1,6 +1,5 @@
 VipBite::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -39,4 +38,12 @@ VipBite::Application.configure do
     password: "UoC10023568",
     user_name: "tamanonv.xi@gmail.com"}
 
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :test
+
+    ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
+      :login => "vipbiteseller_api1.gmail.com",
+      :password => "1379234540",
+      :signature => "AjKIh-hQEeSMtF189H7EuPdDcz.5AfXyK9PEfe07f4KMyb2t0-32fx9t")
+  end
 end

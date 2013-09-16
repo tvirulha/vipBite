@@ -3,17 +3,21 @@ class SessionsController < ApplicationController
   end
 
   def vipBite_LogIn
-  	inputEmail = params[:email];
-	inputPassword = params[:password];
-
-	@user = Users.authenticate(inputEmail, inputPassword);
-
-	if(@user)
-		sign_in(@user);
-		redirect_to(root_url, :notice => "Logged in!");
+	if(params[:email].empty? || params[:password].empty?)
+		redirect_to(root_url)
 	else
-		flash[:error] = 'Invalid email/password combination';
-		redirect_to('/register');
+		inputEmail = params[:email];
+		inputPassword = params[:password];
+
+		@user = Users.authenticate(inputEmail, inputPassword);
+
+		if(@user != nil)
+			sign_in(@user);
+			redirect_to(root_url, :notice => "Logged in!");
+		else
+			flash[:error] = 'Invalid email/password combination';
+			redirect_to('/register');
+		end
 	end
   end
 
