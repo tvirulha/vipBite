@@ -14,7 +14,7 @@ body {
 .header-content-container {
 	display: block;
 	height: 120px;
-	max-width: 970px;
+	max-width: 999px;
 	background-color: #595154;
 	margin: 0 auto;
 	position: relative;
@@ -24,7 +24,7 @@ body {
 
 .body-content-container {
 	position: relative;
-	max-width: 970px;
+	max-width: 999px;
 	margin: 0 auto;
 	background-color: #9E9598;
 	overflow: hidden;
@@ -34,7 +34,7 @@ body {
 .footer-content-container {
 	display: block;
 	min-height: 140px;
-	max-width: 970px;
+	max-width: 999px;
 	margin: 0 auto;
 	background-color: #D6D0D2;
 	position: relative;
