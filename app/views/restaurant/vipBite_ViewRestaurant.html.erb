@@ -1,8 +1,36 @@
 <div id="vipBite_Body" class="body-content-container">
-	<div id="restaurantContainer" style="margin-top: 10px; margin-bottom: 10px;">
-		<div id="restaurantResult" style="background-color: red;display: block; float:left; margin-left: 20px; margin-right:20px; width: 300px; min-height: 50%">
-			This is where the restaurant info goes.
+	<div id="restaurantContainer" class="container" style="margin-top: 10px; margin-bottom: 10px;">
+		<div id="restaurantResult" class="span-8 colborder" style="margin-top:20px; margin-bottom:20px;">
+			<div id="restaurantSearchContainer">
+				<%= form_tag(controller: 'restaurant', action: 'vipBite_ViewRestaurant', method: "post") do %>
+					<%= text_field_tag('SearchVal', nil, maxlength: 30, placeholder: 'What are you in the mood for?', size: 30, :class=>"searchInput") %>
+					<%= submit_tag('SEARCH', :class=>"userLoginButton", style: "padding:7px; font-size: 11px;")%>
+				<% end %>
+			</div>
+			<div id="searchResultContainer" style="margin-top: 5px;">
+				result here!
+			</div>
 		</div>
-		<div id="googleMap" style=" display: block; float:left; margin-left: 20px; margin-right:20px; width: 630px; height: 620px"></div>
+		<div class="span-15">
+			<span id="googleMap" style="display: block; height: 100%; margin-top:20px; margin-bottom:20px; height: 470px;"></span>
+			<hr class="margin-top-10px"/>
+			<div class="span-7">
+				<h4>FEATURE</h4>
+				<div style="margin-left:5px;">
+					<img src="/Image/Shared/instra.png" height="30"/>
+					<p>Featuring new restaruant just added to the VIPbite list? VIPbite TESTED AND
+					AND APPROVED with a blog entry of your experience</p>
+				</div>
+			</div>
+			<div class="span-7">
+				<h4>GET THE APP</h4>
+				<div style="margin-left:5px;">
+					more image up top here!
+					<br/>
+					<img src="/Image/Shared/appstore.png" width="120" height="30"/>
+        			<img src="/Image/Shared/googleplay.png" width="120" height="30"/>
+        		</div>
+			</div>
+		</div>
 	</div>
 </div>

@@ -148,7 +148,14 @@ a:hover {
 	color: #F0F1F5;
 	margin-left:5px;
 	background-color: #878282;
-	border: solid 0px black;
+	border: solid 1px black;
+}
+
+.searchInput {
+	color: white;
+	padding: 5px;
+	background-color: #878282;
+	border: solid 1px black;
 }
 
 .userLoginButton {

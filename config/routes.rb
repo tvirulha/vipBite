@@ -7,7 +7,6 @@ VipBite::Application.routes.draw do
 	match '/login', :to => 'sessions#vipBite_LogIn', via:[:post]
   match '/logout', :to => 'sessions#vipBite_LogOut', via:[:get]
   match '/forgetpassword', :to => 'account#vipBite_PwdRecovery', via:[:get, :post]
-
   match '/internal_register', :to => 'account#vipBite_SubmitRegisterationForm', via:[:post]
   
 	root to: 'home#vipBite_Index'
