@@ -5,33 +5,18 @@ $(document).ready( function() {
         return;
     })
 
-    function initialize()
-    {
-        var mapProp = {
-            center:new google.maps.LatLng(51.508742,-0.120850),
-            zoom:5,
-            mapTypeId:google.maps.MapTypeId.ROADMAP
-        };
-
-        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-    }
-
-    function showRestaurantLocation(lat, long, title)
-    {
-        var mapProp = {
-            center:new google.maps.LatLng(Lat,Long),
-            zoom:5,
-            mapTypeId:google.maps.MapTypeId.ROADMAP
-        };
-
-        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-        var latlong = new google.maps.LatLng(Lat, Long);
-
-        var marker = new google.maps.Markers({position: latlong, title:title});
-
-        marker.setMap(map);
-    }
-
-    google.maps.event.addDomListener(window, 'load', initialize);
+    initialize();
 });
+
+function initialize()
+    {
+        var mapProp = {
+            center:new google.maps.LatLng(51.0500,-114.0667),
+            zoom:15,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
+
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        
+        google.maps.event.addDomListener(window, 'load', initialize);
+    }

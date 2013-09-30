@@ -11,13 +11,13 @@ class RestaurantController < ApplicationController
 		if(request.post?)
 			searchCrit = params[:SearchVal];
 
-			result = Restaurant.find_by(name: searchCrit);
-
-			if(nil != result)
-				result = Restaurant.find_by(cuisine: searchCrit);
+			result = Restaurants.where(restaurantName: searchCrit);
+			
+			if(result.count == 0)
+				result = Restaurants.where(cuisine: searchCrit);
 			end
 
-			if(nil == result)
+			if(result.count != 0)
 				@searchRestaurant = result;
 			else
 				@searchRestaurant = nil;

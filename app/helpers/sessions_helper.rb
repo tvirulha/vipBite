@@ -9,7 +9,12 @@ module SessionsHelper
 	def check_cookies
 		if(cookies[:user_Id])
 			retrieveuser = Users.find_by_user_email(cookies[:user_Id]);
-			@current_user = retrieveuser.user_email;
+			if(nil != retrieveuser)
+				@current_user = retrieveuser.user_email;
+			else
+				cookies.delete(:user_Id);
+				return nil;
+			end
 		else
 			return nil;
 		end
