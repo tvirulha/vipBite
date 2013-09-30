@@ -24,7 +24,6 @@
   <div id="vipBite_LogoSection" style="float: left; display: inline-block; min-width:400px; height: 100%; margin-left:10px;">
     <a href="/"><img src="/Image/Shared/VIPbite.png" alt="VIP BITE" width="400" height="100%"></a>
   </div>
-  <!-- THE HEADER WILL CHANGE DEPENDING ON WETHER OR NOT THE USER IS LOGIN FOR NOW ASSUMED HE IS NOT -->
     <%if(check_cookies)%>
       <div id="vipBite_NavigationMenu" style="display: inline-block; height:20px;text-align: center; position: absolute;bottom: 3px; right: 150px">
         <nav class="nav-menu">
@@ -33,11 +32,10 @@
           <div class="nav-item"><a href="/renew" style="border-left: 1px solid #F0F2F0; border-right: 1px solid #F0F2F0;"><text>RE-NEW MEMBERSHIP</text></a></div>
         </nav>
       </div>
-      
       <div class="login-containter" style="position: absolute; margin-right: 10px; margin-top: 5px; text-align:right; right: 5px; top: 10px;">
         <a href="/logout" style="margin-left: 10px; margin-bottom: 5px; float: right">Logout</a>
         <div id="userEmail" style="margin-left: 10px; margin-bottom: 5px; float: right"><%=@current_user%></div>
-      <div>
+      </div>
     <%else%>
       <%= form_tag(controller: 'sessions', action: 'vipBite_LogIn', method: "post") do%>
         <div id="vipBite_NavigationMenu" style="display: inline-block; height:20px;text-align: center; position: absolute;bottom: 3px; right: 150px">

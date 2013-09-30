@@ -4,12 +4,24 @@ class RestaurantController < ApplicationController
 		@title = 'Restaurant';
 
 		if(request.get?)
-			flash[:warning] = nil;
+			@searchRestaurant = nil;
 			return;
 		end
 
 		if(request.post?)
-			return;
+			searchCrit = params[:SearchVal];
+
+			result = Restaurant.find_by(name: searchCrit);
+
+			if(nil != result)
+				result = Restaurant.find_by(cuisine: searchCrit);
+			end
+
+			if(nil == result)
+				@searchRestaurant = result;
+			else
+				@searchRestaurant = nil;
+			end
 		end
 	end
 end

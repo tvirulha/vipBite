@@ -8,7 +8,11 @@
 				<% end %>
 			</div>
 			<div id="searchResultContainer" style="margin-top: 5px;">
-				result here!
+				<% if(nil != @searchRestaurant) %>
+					Got Some result!
+				<% else %>
+					None
+				<% end %>
 			</div>
 		</div>
 		<div class="span-15">

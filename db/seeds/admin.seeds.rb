@@ -1,13 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
-# Static Define Cuisine data records in the Cuisines Table
-Cuisines.create(cuisine_id: "c001", cuisineName: 'French')
-Cuisines.create(cuisine_id: "c002", cuisineName: 'Italian')
-Cuisines.create(cuisine_id: "c003", cuisineName: 'Japanese')
-Cuisines.create(cuisine_id: "c004", cuisineName: 'Korean')
-# End Static define Cuisines Table
-
 # Static Define Users data for all the Privilage user in the Users Table
 Users.create(user_firstName: 'Tamanon',
              user_lastName:'Virulhakieat',
@@ -37,6 +30,6 @@ Users.create(user_firstName: "Colin",
              user_password: "test",
              userExpirationDate: "2100-12-31")
 # End Static define Users Table
-
+ 
 # Static Define Restaurant data for all the Privilage user in the Users Table
 # End Static define User Table

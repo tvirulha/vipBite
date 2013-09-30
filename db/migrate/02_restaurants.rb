@@ -7,14 +7,15 @@ class Restaurants < ActiveRecord::Migration
 			t.string :province
 			t.string :postal
 			t.string :imageUrl
-
+			t.string :email
+			t.string :phone
+			
 			t.float :longitude
-			t.float :latidude
+			t.float :latitude
 
+			t.string :restaurantPromo
+			t.string :cuisine
 			t.timestamps
 		end
-
-		add_column(:restaurants, :cuisine_id, :string, :null => false)
-		add_column(:restaurants, :restinformations_id, :string, :null => false)
 	end
 end

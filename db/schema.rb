@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 5) do
+ActiveRecord::Schema.define(version: 4) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,11 +23,9 @@ ActiveRecord::Schema.define(version: 5) do
     t.datetime "updated_at"
   end
 
-  create_table "restaurantinfos", force: true do |t|
-    t.string   "restaurantinfo_id"
-    t.string   "restaurnatEmail"
-    t.text     "restaurantPromotion"
-    t.integer  "restaurantPhoneNo"
+  create_table "promotions", force: true do |t|
+    t.string   "promotions_id"
+    t.text     "promotion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -39,17 +37,14 @@ ActiveRecord::Schema.define(version: 5) do
     t.string   "province"
     t.string   "postal"
     t.string   "imageUrl"
+    t.string   "email"
+    t.string   "phone"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.string   "restaurantPromo"
+    t.string   "cuisine"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "cuisine_id",          null: false
-    t.string   "restinformations_id", null: false
-  end
-
-  create_table "twitter_feed", force: true do |t|
-    t.string   "name"
-    t.text     "feed"
-    t.datetime "update"
-    t.string   "guid"
   end
 
   create_table "userTransactions", force: true do |t|

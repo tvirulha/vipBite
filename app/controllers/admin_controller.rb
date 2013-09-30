@@ -9,7 +9,6 @@ class AdminController < ApplicationController
   end
 
   def AddNewRestaurant
-  	Restaurants.AddNew
   end
 
   def ManageRestaurant
