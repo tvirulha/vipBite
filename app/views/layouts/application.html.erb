@@ -22,11 +22,11 @@
 <body>
 <div id="vipBite_Header" class="header-content-container" style="position: relative;">
   <div id="vipBite_LogoSection" style="float: left; display: inline-block; min-width:400px; height: 100%; margin-left:10px;">
-    <a href="/"><img src="/Image/Shared/VIPbite.png" alt="VIP BITE" width="400" height="100%"></a>
+    <a href="/"><img src="/Image/Shared/Logo.png" alt="VIP BITE" width="400" height="100%"></a>
   </div>
     <%if(check_cookies)%>
-      <div id="vipBite_NavigationMenu" style="display: inline-block; height:20px;text-align: center; position: absolute;bottom: 3px; right: 150px">
-        <nav class="nav-menu">
+      <div id="vipBite_NavigationMenu" style="display: inline-block; height:20px;text-align: center; position: absolute;bottom: 3px; right:70px;">
+        <nav class="nav-menu AaarghFont" style="font-weight:bolder;">
           <div class="nav-item"><a href="/restaurant" style="border-left: 1px solid #F0F2F0; border-right: 1px solid #F0F2F0;"><text>FIND A RESTAURANT</text></a></div>
           <div class="nav-item"><a href="/howitwork" style="border-left: 1px solid #F0F2F0; border-right: 1px solid #F0F2F0;"><text>HOW IT WORK</text></a></div>
           <div class="nav-item"><a href="/renew" style="border-left: 1px solid #F0F2F0; border-right: 1px solid #F0F2F0;"><text>RE-NEW MEMBERSHIP</text></a></div>
@@ -38,8 +38,8 @@
       </div>
     <%else%>
       <%= form_tag(controller: 'sessions', action: 'vipBite_LogIn', method: "post") do%>
-        <div id="vipBite_NavigationMenu" style="display: inline-block; height:20px;text-align: center; position: absolute;bottom: 3px; right: 150px">
-          <nav class="nav-menu">
+        <div id="vipBite_NavigationMenu" style="display: inline-block; height:20px;text-align: center; position: absolute;bottom: 3px; right:70px;">
+          <nav class="nav-menu AaarghFont" style="font-weight:bolder;">
             <div class="nav-item"><a href="/restaurant" style="border-left: 1px solid #F0F2F0; border-right: 1px solid #F0F2F0;"><text>FIND A RESTAURANT</text></a></div>
             <div class="nav-item"><a href="/howitwork" style="border-left: 1px solid #F0F2F0; border-right: 1px solid #F0F2F0;"><text>HOW IT WORK</text></a></div>
             <div class="nav-item"><a href="/register" style="border-left: 1px solid #F0F2F0; border-right: 1px solid #F0F2F0;"><text>BECOME A MEMBER</text></a></div>
@@ -47,13 +47,13 @@
         </div>
         <div class="login-containter" style="position: absolute; margin-right: 10px; margin-top: 5px; text-align:right; right: 5px; top: 10px;">
           <div>
-            <label style="margin-left: 5px; font-size: 10px; font-weight:bold; color: #BBBDBB;">EMAIL:</label>
+            <label class="AaarghFont" style="margin-left: 5px; font-size: 10px; font-weight:bold; color: #BBBDBB;">EMAIL:</label>
             <%= email_field_tag('email', nil, maxlength: 30, :class=>"userinput") %>
-            <label style="margin-left: 5px; font-size: 10px; font-weight:bold; color: #BBBDBB;">PASS:</label>
+            <label class="AaarghFont" style="margin-left: 5px; font-size: 10px; font-weight:bold; color: #BBBDBB;">PASS:</label>
             <%= password_field_tag('password', nil, maxlength:20, :class=>"userinput") %>
-            <%= submit_tag('LOGIN', :class=>"userLoginButton")%>
+            <%= submit_tag('LOGIN', :class=>"userLoginButton clickable")%>
           </div>
-          <div style="margin-top: 10px; margin-right: 35px">
+          <div class="AaarghFont" style="margin-top: 10px; margin-right: 35px; font-weight:bold;">
             <a href="/forgetpassword" class="headerlink">FORGOT YOUR PASSWORD?</a>
             <text class="headerlink"> | </text>
             <a href="/register" class="headerlink">REGISTER NOW</a>
@@ -71,7 +71,7 @@
   <div id="vipBite_FooterContent" class="container"style="margin-top: 10px">
     <section id="ContactUs_Section" class="span-7">
       <label class="FH">VIPbite</label>
-      <p style="margin-top: 5px;">
+      <p class="BonvenoFont" style="margin-top: 5px;">
         VIPbite is a restaurant discount membership program unlike any other food or beverage savings offerings.
         Don't bother waiting for daily deal coupons or other promotions in your area,
         VIPbite gives you instant access to start saving today on local restaurants in your area.
@@ -95,10 +95,10 @@
     <section id="Policies_Section" class="span-6 push-3">
       <label class="FH">THE DETAILS</label>
       <ul style="margin-top: 10px; margin-left: 10px; margin-bottom: 10px;">
-        <li style="margin-top: 5px;"><a href="#"><text>Contact</text></a></li>
-        <li style="margin-top: 5px;"><a href="#"><text>FAQ</text></a></li>
-        <li style="margin-top: 5px;"><a href="#"><text>Term of Use</text></a></li>
-        <li style="margin-top: 5px;"><a href="#"><text>Privacy Statement</text></a></li>
+        <li style="margin-top: 5px;"><a href="#"><text class="BonvenoFont">Contact</text></a></li>
+        <li style="margin-top: 5px;"><a href="#"><text class="BonvenoFont">FAQ</text></a></li>
+        <li style="margin-top: 5px;"><a href="#"><text class="BonvenoFont">Term of Use</text></a></li>
+        <li style="margin-top: 5px;"><a href="#"><text class="BonvenoFont">Privacy Statement</text></a></li>
       </ul>
     </section>
 

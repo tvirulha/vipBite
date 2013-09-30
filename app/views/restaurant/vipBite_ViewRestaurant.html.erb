@@ -4,7 +4,7 @@
 			<div id="restaurantSearchContainer">
 				<%= form_tag(controller: 'restaurant', action: 'vipBite_ViewRestaurant', method: "post") do %>
 					<%= text_field_tag('SearchVal', nil || params[:SearchVal], maxlength: 30, placeholder: 'What are you in the mood for?', size: 30, :class=>"searchInput") %>
-					<%= submit_tag('SEARCH', :class=>"userLoginButton", style: "padding:7px; font-size: 11px;")%>
+					<%= submit_tag('SEARCH', :class=>"userLoginButton clickable", style: "padding:7px; font-size: 11px;")%>
 				<% end %>
 			</div>
 			<div id="searchResultContainer" style="margin-top: 5px;">
@@ -15,8 +15,10 @@
 						</div>
 						<div class="span-4 margin-bottom-5px">
 							<h3><%= rest.restaurantName %></h3>
-							<p><%= [rest.address, rest.city, rest.province, rest.postal].join(",") %></p>
-							<button type="button" onclick="showRestaurantLocation(<%=rest.latitude%>, <%=rest.longitude%>, '<%=rest.restaurantName%>')">viewOnMap</button>
+							<p class="vipBiteRegularFont"><%= [rest.address, rest.city, rest.province, rest.postal].join(", ") %></p>
+							<button type="button" class="viewMapButton" onclick="showRestaurantLocation(<%=rest.latitude%>, <%=rest.longitude%>, '<%=rest.restaurantName%>')">
+								viewOnMap
+							</button>
 						</div>
 						<hr/>
 					<% end %>

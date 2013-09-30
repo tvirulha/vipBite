@@ -16,6 +16,68 @@ body {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }*/
 
+/* FONT-FACE 
+-------------------------------------------------------------- */
+
+@font-face {
+  font-family: "VIPBiteDefault";
+  src: url("/Font/AnoRegular-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Aaargh";
+  src: url("/Font/Aaargh.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Bonveno";
+  src: url("/Font/BonvenoCF-Light.otf") format("opentype"); 
+}
+
+@font-face {
+  font-family: "ColabReg";
+  src: url("/Font/ColabReg.otf") format("opentype"); 
+}
+
+
+.vipBiteRegularFont {
+  font-family: "VIPBiteDefault", helvetica;
+  font-size: 11px;
+}
+
+.ColabRegFont{
+  font-family: "ColabReg", helvetica;
+  font-size: 11px;
+}
+
+.AaarghFont{
+  font-family: "Aaargh", helvetica;
+  font-size: 11px;
+}
+
+.BonvenoFont{
+  font-family: "Bonveno", helvetica;
+  font-size: 11px;
+}
+
+/* Custon Font Tag class
+-------------------------------------------------------------- */
+h1.AaarghFont {
+  font-family: "Aaargh", helvetica;
+  font-size: 3em; line-height: 1; margin-bottom: 0.5em;
+}
+
+h4.BonvenoFont {
+  font-family: "Bonveno", helvetica;
+  font-size: 1.2em; line-height: 1.25; margin-bottom: 1.25em;
+  font-weight: bolder;
+}
+
+p.BonvenoFontBold {
+  font-family: "Bonveno", helvetica;
+  font-size: 11px;
+  font-weight: bold;
+}
 
 /* Headings
 -------------------------------------------------------------- */
@@ -87,16 +149,14 @@ dd     { margin-left: 1.5em;}
  */
 table         { margin-bottom: 1.4em; width:100%; }
 th            { font-weight: bold; }
-thead th      { background: #c3d9ff; }
+thead th      {}
 th,td,caption { padding: 4px 10px 4px 5px; }
 /*
   You can zebra-stripe your tables in outdated browsers by adding
   the class "even" to every other table row.
  */
 tbody tr:nth-child(even) td,
-tbody tr.even td  {
-  background: #e5ecf9;
-}
+tbody tr.even td  {}
 tfoot       { font-style: italic; }
 caption     { background: #eee; }
 
