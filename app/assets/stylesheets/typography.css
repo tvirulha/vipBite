@@ -79,6 +79,12 @@ p.BonvenoFontBold {
   font-weight: bold;
 }
 
+.imageCaption{
+  font-family: "Bonveno", helvetica;
+  font-size: 1.2em; line-height: 1.0;
+  font-weight: bolder;
+}
+
 /* Headings
 -------------------------------------------------------------- */
 

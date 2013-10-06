@@ -4,3 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 
 VipBite::Application.load_tasks
+

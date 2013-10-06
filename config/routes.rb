@@ -1,13 +1,15 @@
 VipBite::Application.routes.draw do
 
-  match '/Admin', :to => 'admin#adminIndex', via:[:get]
 	match '/register', :to => 'account#vipBite_Register', via:[:get, :post]
 	match '/restaurant', :to => 'restaurant#vipBite_ViewRestaurant', via:[:get, :post]
-	match '/howitwork', :to => 'home#vipBite_HowItWork', via:[:get, :post]
 	match '/login', :to => 'sessions#vipBite_LogIn', via:[:post]
   match '/logout', :to => 'sessions#vipBite_LogOut', via:[:get]
   match '/forgetpassword', :to => 'account#vipBite_PwdRecovery', via:[:get, :post]
   match '/internal_register', :to => 'account#vipBite_SubmitRegisterationForm', via:[:post]
+  match '/account', :to => 'account#vipBite_Account', via:[:get, :post]
+  match '/renew', :to => 'account#vipBite_renewMember', via:[:get, :post]
+  match '/aboutus', :to => 'home#vipBite_AboutUs', via:[:get]
+  match '/contact', :to => 'home#vipBite_ContactUs', via:[:get, :post]
   
 	root to: 'home#vipBite_Index'
 

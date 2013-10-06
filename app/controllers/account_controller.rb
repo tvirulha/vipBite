@@ -71,4 +71,19 @@ class AccountController < ApplicationController
 			redirect_to(root_url);
 		end
 	end
+
+	def vipBite_Account
+		if(request.post?)
+			currentUser = cookies[:user_Id];
+			updateEmail = params[:email];
+			updatePwd = params[:password];
+
+			Users.updateUserInfo(currentEmail, updateEmail, updatePwd);
+		elsif(request.get?)
+			logginuser = Users.find_by_user_email(cookies[:user_Id]);
+
+			@loginUserEmail = logginuser.user_email;
+			@loginUserExp = logginuser.userExpirationDate;
+		end
+	end
 end

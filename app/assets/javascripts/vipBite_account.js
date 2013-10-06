@@ -17,6 +17,6 @@ $(document).ready( function() {
     $("#account_LoginButton").click( function (){
         $.ajax({type: 'POST', url: '/Login',
             success: function(data)
-            {alert("FUCK OFF");}});
+            {alert("SWEET YOU HAVE BEEN TRICK!!!! JUST KIDDING.");}});
     });
 })

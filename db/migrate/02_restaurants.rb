@@ -15,6 +15,7 @@ class Restaurants < ActiveRecord::Migration
 
 			t.string :restaurantPromo
 			t.string :cuisine
+			t.datetime :modifieddate
 			t.timestamps
 		end
 	end

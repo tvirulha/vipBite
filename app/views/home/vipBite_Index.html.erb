@@ -34,8 +34,15 @@
     <div class="span-7 colborder">
       <h4 class="BonvenoFont">PLACES TO SAVE</h4>
       <p class="BonvenoFont" style="text-align: center;">... and counting. Try somewhere new tonight.</p>
+      <hr/>
       <div class="span-7">
-        LOGO LIST
+        <!-- Restaurants.order("modifieddate DESC").limit(5).each do |rests| %>-->
+        <% Restaurants.limit(7).each do |rests| %>
+            <div class="span-7" style="display: inline">
+              <img src="/Image/Home/background.jpg" width="70px" height="30px" style="vertical-align:middle;"><text class="imageCaption"><%= rests.restaurantName %></text></img>
+              <hr/>
+            </div>
+        <%end%>
       </div>
       <div class="span-7">
         <a class="AaarghFont" href="/restaurant" style="float: right">click to see more</a>

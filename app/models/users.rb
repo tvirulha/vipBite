@@ -8,13 +8,15 @@ class Users < ActiveRecord::Base
 	def self.authenticate(email, input_pwd)
 		user = find_by_user_email(email);
 
-		checkpwd = BCrypt::Password.new(user.user_password);
+		if(nil != user)
+			checkpwd = BCrypt::Password.new(user.user_password);
 
-		if(user != nil and checkpwd == input_pwd)
-			return user.user_email;
-		else
-			return user.user_email;
-		end
+			if(checkpwd == input_pwd)
+				return user.user_email;
+			else
+				return nil;
+			end
+		end 
 	end
 
 	def self.resetpwd(email)
@@ -23,7 +25,7 @@ class Users < ActiveRecord::Base
 		new_pwd = SecureRandom.uuid;
 		encryptpwd = BCrypt::Password.create(new_pwd);
 
-		user.user_password = encryptpwd;
+		user.update(user_password: encryptpwd);
 
 		return new_pwd;
 	end
@@ -94,5 +96,12 @@ class Users < ActiveRecord::Base
 	def self.deleteIncompleteUserRegistration(email)
 		user = find_by_user_email(email);
 		user.destroy;
+	end
+
+	def self.updateUserInfo(currentEmail, newEmail, newPassword)
+		user = find_by_user_email(currentEmail);
+		encryptpwd = BCrypt::Password.create(new_pwd);
+
+		user.update(user_email: newEmail, user_password: encryptpwd);
 	end
 end

@@ -1,9 +1,15 @@
 
 $(document).ready( function() {
-	 $("#becomeVIPbiteMemberButton").click( function (){
+	$("#becomeVIPbiteMemberButton").click( function (){
         window.location.href = "/register";
         return;
     })
+
+    $("#renewMembershipButton").click( function (){
+        window.location.href = "/renew";
+        return;
+    })
+
 
     initialize();
 });
