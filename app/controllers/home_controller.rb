@@ -9,7 +9,12 @@ class HomeController < ApplicationController
 
 	def vipBite_ContactUs
 		if (request.post?)
-			return
+			user = Users.find_by_user_email(cookies[:user_Id]);
+
+			if(user != nil)
+				UserMailer.supportemail(user, params[:emailContent]).deliver
+				redirect_to(root_url);
+			end
 		elsif (request.get?)
 			return
 		end

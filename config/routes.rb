@@ -10,6 +10,7 @@ VipBite::Application.routes.draw do
   match '/renew', :to => 'account#vipBite_renewMember', via:[:get, :post]
   match '/aboutus', :to => 'home#vipBite_AboutUs', via:[:get]
   match '/contact', :to => 'home#vipBite_ContactUs', via:[:get, :post]
+  match '/restaurant_info', :to => 'restaurant#vipBite_FullRestaurantInfo', via:[:get, :post]
   
 	root to: 'home#vipBite_Index'
 

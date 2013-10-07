@@ -24,4 +24,13 @@ class RestaurantController < ApplicationController
 			end
 		end
 	end
+
+	def vipBite_FullRestaurantInfo
+		if(params[:restaurant] != nil)
+			#this is where we should get the list of info and open a new tab.
+			redirect_to(root_url);
+		else
+			redirect_to('/contact');
+		end
+	end
 end

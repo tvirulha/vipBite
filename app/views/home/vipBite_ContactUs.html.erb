@@ -14,10 +14,14 @@
   		</table>
 	</div>
 	<hr/>
-	<h1>EMAIL VIPbite SUPPORT TEAM</h1>
+	<h1>EMAIL SUPPORT TEAM</h1>
 	<div class="span-16  margin-left-10px">
   		<%= form_tag(controller: 'home', action: 'vipBite_ContactUs', method: 'post') do %>
-			<%= text_area_tag('emailContent', params[:emailContent] || nil, style:"width: 630px; height: 300px;") %>
+      <% if(!check_cookies)%>
+        <%= email_field_tag('email', params[:email] || nil, placeholder:"please enter your email address here!", size:35, maxlength: 30)%>
+        <hr class ="space"/>
+      <% end %>
+      <%= text_area_tag('emailContent', params[:emailContent] || nil, style:"width: 630px; height: 300px;") %>
 			<%= submit_tag('SUBMIT', :class=>"renewMembershipButton clickable", style:"float:right; margin-top:10px;") %>
 		<% end %>
 	</div>
