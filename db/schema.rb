@@ -23,9 +23,14 @@ ActiveRecord::Schema.define(version: 4) do
     t.datetime "updated_at"
   end
 
-  create_table "promotions", force: true do |t|
-    t.string   "promotions_id"
+  create_table "details", force: true do |t|
+    t.string   "info_id"
     t.text     "promotion"
+    t.string   "reservation"
+    t.string   "originallink"
+    t.string   "comment"
+    t.string   "imgfolder"
+    t.string   "urbanspoonlink"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -39,10 +44,12 @@ ActiveRecord::Schema.define(version: 4) do
     t.string   "imageUrl"
     t.string   "email"
     t.string   "phone"
+    t.string   "operatinghour"
     t.float    "longitude"
     t.float    "latitude"
-    t.string   "restaurantPromo"
+    t.string   "info_id"
     t.string   "cuisine"
+    t.datetime "modifieddate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

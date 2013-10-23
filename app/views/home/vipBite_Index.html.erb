@@ -31,18 +31,24 @@
       </div>
     </div>
 
-    <div class="span-7 colborder">
+    <div class="span-7 colborder" style="position: relative">
       <h4 class="BonvenoFont">PLACES TO SAVE</h4>
-      <p class="BonvenoFont" style="text-align: center;">... and counting. Try somewhere new tonight.</p>
+      <p class="BonvenoFont" style="margin-left: 10px; margin-bottom: 20px; text-align: left;">... and counting. Try somewhere new tonight.</p>
       <hr/>
-      <div class="span-7">
-        <!-- Restaurants.order("modifieddate DESC").limit(5).each do |rests| %>-->
-        <% Restaurants.limit(7).each do |rests| %>
-            <div class="span-7" style="display: inline">
-              <img src="/Image/Home/background.jpg" width="70px" height="30px" style="vertical-align:middle;"><text class="imageCaption"><%= rests.restaurantName %></text></img>
-              <hr/>
-            </div>
-        <%end%>
+      <div class="span-7" style="position: relative">
+        <table class="span-5" style="margin-left: 30px;">
+          <% Restaurants.limit(5).each do |rests| %>
+            <tr>
+              <th style="margin-left: 20px;">
+                <img src="/Image/Home/background.jpg" width="70px" height="30px" style="vertical-align:middle;"/>
+              </th>
+              <td>
+                <text class="imageCaption"><%= rests.restaurantName %></text>
+              </td>
+            </tr>
+          <%end%>
+        </table>
+        <hr/>
       </div>
       <div class="span-7">
         <a class="AaarghFont" href="/restaurant" style="float: right">click to see more</a>

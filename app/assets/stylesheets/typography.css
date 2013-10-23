@@ -83,6 +83,15 @@ p.BonvenoFontBold {
   font-family: "Bonveno", helvetica;
   font-size: 1.2em; line-height: 1.0;
   font-weight: bolder;
+  font-style: italic;
+  text-transform:uppercase;
+}
+
+label.DetailCaption{
+  font-family: "Bonveno", helvetica;
+  font-size: 0.9em; line-height: 1.0;
+  color: #3E4747;
+  font-style:italic;
 }
 
 /* Headings

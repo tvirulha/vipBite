@@ -1,0 +1,100 @@
+<div id="vipBite_Body" class="body-content-container">
+	<div id="restaurantContainer" class="container" style="margin-top: 40px; margin-bottom:10px">
+		<div class="span-8">
+			<input id="latitude_hid" type="hidden" value="<%= @Latitude %>"/>
+			<input id="longitude_hid" type="hidden" value="<%= @Longitude %>"/>
+			<h1><%= @Name %></h1>
+
+			<div class="PromotionBox" style="width: 95%; height: 100px; margin: 0px auto; margin-bottom: 10px;">
+				<div style="width: 80%; height: 80%; margin-top: 10px; margin-left: 10px;">
+					<label class="DetailCaption">VIPbiteDEAL:</label>
+					<label class="Promotion"><%= @Deal %></label>
+					<br/>
+					<p class="promotionDetail">
+						<%= @Deal %>
+					</p>
+				</div>
+			</div>
+
+			<div style="width: 95%; margin: 0px auto; ">
+				<table style="height: 200px;">
+					<tr>
+						<th class="Caption">RESERVATION:</th>
+						<td style="line-height: 1.0"><%= @Reservation %></td>
+					</tr>
+					<tr>
+						<th class="Caption">PHONE:</th>
+						<td style="line-height: 1.0"><%= @Phone %></td>
+					</tr>
+					<tr>
+						<th class="Caption">HOURS:</th>
+						<td style="line-height: 1.0"><%= @Hours %></td>
+					</tr>
+					<tr>
+						<th class="Caption">WHY WE LOVE <%= @Name %>:</th>
+						<td style="line-height: 1.0"><%= @Comment %></td>
+					</tr>
+				</table>
+			</div>
+			<div style="vertical-align: middle; text-align:center;">
+				<hr/><a href="http://www.<%= @urbanspoonlink%>" target="_blank"><img src="Image/Shared/uspoonImg.png" style="img-align:center"/></a>
+			</div>
+		</div>
+		<div class="span-16">
+			<div style="overflow-x: auto; overflow-y:hidden;">
+				<ul class="imglist">
+					<% @Images.each do |img| %>
+						<li class="imgthumbnail"><a href="<%= img %>" data-lightbox="restaurantImg"/><img src="<%= img %>" width="70px" height="100%"/></a></li>
+					<% end %>
+				</ul>
+			</div>
+			<span id="googleMap" style="display: block; margin-top:10px; height: 400px;"></span>
+			<hr class="margin-top-10px"/>
+			<div class="span-7">
+				<h4>FEATURE</h4>
+				<div style="margin-left:5px;">
+					<img src="/Image/Shared/instra.png" height="30"/>
+					<p>Featuring new restaruant just added to the VIPbite list? VIPbite TESTED AND
+					AND APPROVED with a blog entry of your experience</p>
+				</div>
+			</div>
+			<div class="span-7">
+				<h4>GET THE APP</h4>
+				<div style="margin-left:5px;">
+					more image up top here!
+					<br/>
+					<img src="/Image/Shared/appstore.png" width="120" height="30"/>
+        			<img src="/Image/Shared/googleplay.png" width="120" height="30"/>
+        		</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(window).bind("ready", function() {
+		var latitude = $("#latitude_hid").val();
+		var longitude = $("#longitude_hid").val();
+
+		InitWithLocation(latitude, longitude);
+	});
+
+	function InitWithLocation(lat, lng)
+	{
+	    var mapProp = {
+	        center:new google.maps.LatLng(lat,lng),
+	        zoom:17,
+	        mapTypeId:google.maps.MapTypeId.ROADMAP
+	    };
+
+	    map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+	    var latlong = new google.maps.LatLng(lat, lng);
+
+	    var marker = new google.maps.Marker({
+        title: "restaurantLocation",
+        map: map,
+        position: latlong
+      });
+	}
+</script>

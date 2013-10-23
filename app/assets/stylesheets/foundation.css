@@ -20,7 +20,7 @@ body {
 /*-- CONTAINER CLASS CSS--*/
 .header-content-container {
 	display: block;
-	height: 120px;
+	height: 100px;
 	max-width: 999px;
 	background-color: #595154;
 	margin: 0 auto;
@@ -55,7 +55,7 @@ body {
 	position:absolute;
 	overflow: visible;
 	display: inline;
-	float:left;
+	top: -20;
 	z-index: 10;
 }
 
@@ -217,6 +217,15 @@ a:hover {
 	border: solid 1px white;
 	background-color: #878282;
 	padding: 5px;
+}
+
+.SubmitButton{
+	font-family: "Bonveno", helvetica;
+	font-size:12px;
+	font-weight: bolder;
+	border: solid 1px white;
+	background-color: #878282;
+	padding: 5px;	
 }
 
 .FH{

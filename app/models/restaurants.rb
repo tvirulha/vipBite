@@ -3,7 +3,7 @@ class Restaurants < ActiveRecord::Base
 	require 'securerandom';
 	require 'geocoder';
 
-	attr_accessible :restaurantName, :address, :city, :province, :postal, :imageUrl, :longitude, :latitude, :email, :phone, :restaurantPromo, :cuisine, :modifieddate
+	attr_accessible :restaurantName, :address, :city, :province, :postal, :imageUrl, :longitude, :latitude, :email, :phone, :info_id, :cuisine, :modifieddate
 
 	def self.ConvertedAddressToLatLong(restaurantName)
 		rest = Restaurants.find_by_restaurantName(restaurantName);

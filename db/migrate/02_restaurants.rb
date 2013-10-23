@@ -9,11 +9,12 @@ class Restaurants < ActiveRecord::Migration
 			t.string :imageUrl
 			t.string :email
 			t.string :phone
+			t.string :operatinghour
 			
 			t.float :longitude
 			t.float :latitude
 
-			t.string :restaurantPromo
+			t.string :info_id
 			t.string :cuisine
 			t.datetime :modifieddate
 			t.timestamps
